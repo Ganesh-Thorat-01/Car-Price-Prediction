@@ -4,17 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Car Price Prediction</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://th.bing.com/th/id/OIP.aKRltFnmHf80A7GIhdyJpwHaHa?w=190&h=190&c=7&o=5&dpr=1.5&pid=1.7">
 </head>
 
 <body>
+    <div id=slide-bg>
+    <div id=slides >
+    <img class="mySlides" src="https://th.bing.com/th/id/OIP.JcV1TzGt9lGsn24HrZQ6ZgHaEk?w=246&h=180&c=7&o=5&dpr=1.5&pid=1.7">
+    <img class="mySlides" src="https://th.bing.com/th/id/OIP.kSs9za_uZUoX9sB6uIZmDAHaE7?w=230&h=180&c=7&o=5&dpr=1.5&pid=1.7">
+    <img class="mySlides" src="https://th.bing.com/th/id/OIP.00JVZ5Dn7QYWD0u1ORcslwHaDt?w=296&h=174&c=7&o=5&dpr=1.5&pid=1.7">
+    <img class="mySlides" src="https://th.bing.com/th/id/OIP.z-_QG7MNFw1GulTnsJUqZAHaFj?w=242&h=182&c=7&o=5&dpr=1.5&pid=1.7">
+    <img class="mySlides" src="https://th.bing.com/th/id/OIP.b3xHCB4iGVFTdjcuTnLRUQHaE7?w=245&h=180&c=7&o=5&dpr=1.5&pid=1.7">
+    <script type=text/javascript src="{{
+        url_for('static', filename='script.js') }}"></script>
 
+    </div><h1>Predictive analysis</h1><br></div>
     <div style="color:blue">
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>Predictive analysis</h2>
+            
             <h3>Year</h3>
-            <input id="first" name="Year" type="number ">
-            <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
+            <input id="first" name="Year" type="number " required='required'>
+            
+            <h3>What is the Showroom Price?(In lakhs (INR))</h3><br><input id="second" name="Present_Price" required="required">
             <h3>How Many Kilometers Drived?</h3><input id="third" name="Kms_Driven" required="required">
             <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><br><input id="fourth" name="Owner" required="required">
             <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
@@ -34,8 +46,6 @@
             <br>
 
 
-
-
         </form>
 
 
@@ -43,16 +53,53 @@
         <br><br><h3>{{ prediction_text }}<h3>
     </div>
 
-
-
-
+    
     <style>
+        h1{
+            font-family: WildWest;
+            font-size: 80px;
+            font-weight: bold;
+            top: 0px;
+            margin-bottom:auto;
+            left: 430px;
+            position:absolute;
+            color: rgb(24, 28, 207);
+            text-align: justify;
+            line-height: 100px;
+            width: 100%;
+            
+    
+        }
+
         body {
-            background-color: lightslategray;
+            background-color: rgb(163, 228, 250);
             text-align: center;
             padding: 0px;
         }
+
+        #slide-bg{
+            background: rgb(6, 211, 247);
+            display: block;
+            padding-left: 0%;
+            margin-left: 0px;
+            margin-bottom: 0%;
+            width: 1400px;
+            overflow-x: auto;
+            
+
+        }
+        #slides {
+
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0%;
+            width: 100%;
+          
+            
+        }
         
+
         #research {
             font-size: 18px;
             width: 100px;
@@ -79,10 +126,10 @@
         }
         
         #fuel {
-            width: 83px;
+            width: 90px;
             height: 43px;
             text-align: center;
-            border-radius: 14px;
+            border-radius: 11px;
             font-size: 20px;
         }
         
@@ -154,6 +201,8 @@
             text-align: center;
         }
     </style>
+
+
 </body>
 
 </html>
